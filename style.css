@@ -2,17 +2,19 @@ body {
   display: flex;
 }
 
-/* h4 {
+h4.time {
   position: absolute;
-  justify-content: space-between;
-} */
-
-/* #timer {
-  justify-content: flex-end;
-  align-items: flex-start;
+  top: 3%;
+  right: 3%;
 }
 
-#scoreboard {
-  justify-content: flex-start;
-  align-items: flex-start;
-} */
+h4.scoreboard {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+
+section {
+  align-items: center;
+  text-align: center;
+}

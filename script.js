@@ -2,21 +2,6 @@
 var secondsLeft = 75;
 var timeEl = document.querySelector(".time");
 var endMessage = "Quiz is complete!";
-//timer countdown function
-function timer() {
-  var timerInterval = setInterval(function () {
-    timeEl.textContent = secondsLeft + " seconds remaining";
-    secondsLeft--;
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-    }
-  }, 1000);
-}
-
-timer();
-
-// function to start quiz
-function startQuiz() {}
 
 // array of questions + their answers
 var questAns = [
@@ -55,6 +40,28 @@ var answers = [
   questAns[17],
   questAns[21],
 ];
+
+//timer countdown function
+function timer() {
+  var timerInterval = setInterval(function () {
+    timeEl.textContent = secondsLeft + " seconds remaining";
+    secondsLeft--;
+    if (secondsLeft === 0) {
+      timeEl.textContent = "Time's up";
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+
+//button click triggers timer to begin
+document.querySelector("button").addEventListener("click", function () {
+  document.getElementById("begin").style.display = "none";
+  timer();
+  startQuiz();
+});
+
+// function to start quiz
+function startQuiz() {}
 
 console.log(answers[2]);
 console.log(answers);
