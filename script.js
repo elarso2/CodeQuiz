@@ -33,9 +33,21 @@ var questAns = [
   "Justify-content",
   "Align-items",
   "Align-self",
-  "",
+  "What does HTML stand for?",
+  "Hypertext Markup Language",
+  "Hypertype Markup Language",
+  "Hypertext Making Language",
+  "Hypertext Market Language",
 ];
 
-var answers = [questAns[2], questAns[8], questAns[13], questAns[17]];
+//array of answers
+var answers = [
+  questAns[2],
+  questAns[8],
+  questAns[13],
+  questAns[17],
+  questAns[21],
+];
 
 console.log(answers[2]);
+console.log(answers);
