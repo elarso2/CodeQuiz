@@ -1,12 +1,19 @@
 //variables
 var secondsLeft = 75;
+var timeEl = document.querySelector(".time");
 var endMessage = "Quiz is complete!";
 //timer countdown function
 function timer() {
-  if (secondsLeft == 0) {
-    return endMessage;
-  }
+  var timerInterval = setInterval(function () {
+    timeEl.textContent = secondsLeft + " seconds remaining";
+    secondsLeft--;
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
 }
+
+timer();
 
 // function to start quiz
 function startQuiz() {}
