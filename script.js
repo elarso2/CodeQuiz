@@ -1,0 +1,41 @@
+//variables
+var secondsLeft = 75;
+var endMessage = "Quiz is complete!";
+//timer countdown function
+function timer() {
+  if (secondsLeft == 0) {
+    return endMessage;
+  }
+}
+
+// function to start quiz
+function startQuiz() {}
+
+// array of questions + their answers
+var questAns = [
+  "Which of the following is not a data type?",
+  "Boolean",
+  "Integer",
+  "String",
+  "Null",
+  "The item found within a tag, which can be used to identify a specific tag is called a(n) ______.",
+  "Element",
+  "Object",
+  "Attribute",
+  "Style",
+  "Which major language would you use to style and position content on your webpage?",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "C++",
+  "Which flex property aligns properties on the horizontal axis?",
+  "Flex-direction",
+  "Justify-content",
+  "Align-items",
+  "Align-self",
+  "",
+];
+
+var answers = [questAns[2], questAns[8], questAns[13], questAns[17]];
+
+console.log(answers[2]);

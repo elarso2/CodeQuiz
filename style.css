@@ -1,0 +1,18 @@
+body {
+  display: flex;
+}
+
+/* h4 {
+  position: absolute;
+  justify-content: space-between;
+} */
+
+/* #timer {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#scoreboard {
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
