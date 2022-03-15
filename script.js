@@ -53,15 +53,69 @@ function timer() {
   }, 1000);
 }
 
-//button click triggers timer to begin
+//button click triggers timer to begin and startQuiz function
 document.querySelector("button").addEventListener("click", function () {
   document.getElementById("begin").style.display = "none";
   timer();
   startQuiz();
 });
 
+// variables for questions and answers
+var question = document.querySelector(".question");
+var answerOne = document.querySelector(".answer1");
+var answerTwo = document.querySelector(".answer2");
+var answerThree = document.querySelector(".answer3");
+var answerFour = document.querySelector(".answer4");
+
+//fxn to ask q1
+function questionOne() {
+  question.textContent = questAns[0];
+  answerOne.textContent = questAns[1];
+  answerTwo.textContent = questAns[2];
+  answerThree.textContent = questAns[3];
+  answerFour.textContent = questAns[4];
+}
+
+//function to ask q2
+function questionTwo() {
+  question.textContent = questAns[5];
+  answerOne.textContent = questAns[6];
+  answerTwo.textContent = questAns[7];
+  answerThree.textContent = questAns[8];
+  answerFour.textContent = questAns[9];
+}
+
+//fxn to ask q3
+function questionThree() {
+  question.textContent = questAns[10];
+  answerOne.textContent = questAns[11];
+  answerTwo.textContent = questAns[12];
+  answerThree.textContent = questAns[13];
+  answerFour.textContent = questAns[14];
+}
+
+// fxn to ask q4
+function questionFour() {
+  question.textContent = questAns[15];
+  answerOne.textContent = questAns[16];
+  answerTwo.textContent = questAns[17];
+  answerThree.textContent = questAns[18];
+  answerFour.textContent = questAns[19];
+}
+
+//fxn to ask q5
+function questionFive() {
+  question.textContent = questAns[20];
+  answerOne.textContent = questAns[21];
+  answerTwo.textContent = questAns[22];
+  answerThree.textContent = questAns[23];
+  answerFour.textContent = questAns[24];
+}
+
 // function to start quiz
-function startQuiz() {}
+function startQuiz() {
+  questionOne();
+}
 
 console.log(answers[2]);
 console.log(answers);
