@@ -2,6 +2,7 @@
 var secondsLeft = 75;
 var timeEl = document.querySelector(".time");
 var endMessage = "Quiz is complete!";
+var score = 0;
 
 // array of questions + their answers
 var questAns = [
@@ -60,12 +61,35 @@ document.querySelector("button").addEventListener("click", function () {
   startQuiz();
 });
 
+//idenitifying if answer selected by the user is correct (an element of the answer array)
+function scoring() {
+  var status = "";
+  for (var i = 0; i < answers.length; i++) {
+    var name = answers[i];
+    if (name == selection) {
+      //need to connect selection to the click event somehow
+      status = "correct";
+      score++;
+    } else {
+      status = "incorrect";
+      secondsLeft = secondsLeft - 8;
+    }
+  }
+}
+
+//making the ul a clickable event
+var responses = document.querySelector(".responses");
+responses.addEventListener("click", scoring);
+
 // variables for questions and answers
 var question = document.querySelector(".question");
 var answerOne = document.querySelector(".answer1");
 var answerTwo = document.querySelector(".answer2");
 var answerThree = document.querySelector(".answer3");
 var answerFour = document.querySelector(".answer4");
+
+//score count
+var score = 0;
 
 //fxn to ask q1
 function questionOne() {
@@ -119,3 +143,7 @@ function startQuiz() {
 
 console.log(answers[2]);
 console.log(answers);
+console.log(typeof answers);
+console.log(typeof answers[0]);
+console.log("score:" + score);
+// console.log(typeof (answerTwo.textContent = questAns[2]))

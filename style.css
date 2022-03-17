@@ -14,7 +14,19 @@ h4.scoreboard {
   left: 3%;
 }
 
-section {
+section.begin {
   align-items: center;
   text-align: center;
+}
+
+section.quiz {
+  align-items: center;
+}
+/* h1.question {
+  align-items: center;
+  text-align: center;
+}*/
+
+ul {
+  list-style-type: upper-alpha;
 }
