@@ -61,25 +61,81 @@ document.querySelector("button").addEventListener("click", function () {
   startQuiz();
 });
 
+var questionCount = 0;
+
 //idenitifying if answer selected by the user is correct (an element of the answer array)
-function scoring() {
-  var status = "";
-  for (var i = 0; i < answers.length; i++) {
-    var name = answers[i];
-    if (name == selection) {
-      //need to connect selection to the click event somehow
-      status = "correct";
-      score++;
-    } else {
-      status = "incorrect";
-      secondsLeft = secondsLeft - 8;
-    }
+function scoring(selectedAnswer) {
+  if (selectedAnswer == answers[questionCount]) {
+    score++;
+  } else {
+    secondsLeft = secondsLeft - 8;
   }
+  // var status = "";
+  // for (var i = 0; i < answers.length; i++) {
+  //   var name = answers[i];
+  //   if (name == selection) {
+  //     //need to connect selection to the click event somehow
+  //     status = "correct";
+  //     score++;
+  //   } else {
+  //     status = "incorrect";
+  //     secondsLeft = secondsLeft - 8;
+  //   }
+  // }
 }
 
-//making the ul a clickable event
-var responses = document.querySelector(".responses");
-responses.addEventListener("click", scoring);
+// retrieving radio input value
+// var selection = document.querySelector('input[name="answer"]:checked').value;
+
+//getting radio button output
+// function displaySelection() {
+//   var selection = document.getElementsByName("answer");
+//   for (i = 0; i < selection.length; i++) {
+//     if (selection[i].checked)
+//       document.getElementById("result").innerHTML =
+//         "Answer:" + selection[i].value;
+//     console.log(selection[i].value);
+//   }
+// }
+
+//verifying if the submission has a value
+// var input = document.getElementById("btn");
+// var inputVal = "";
+// if (input) {
+//   inputVal = input.value;
+//   console.log(inputVal);
+// }
+
+// js tutorial method attempt
+function selection(funTest) {
+  const btn = document.querySelector("#btn");
+  const radioButtons = document.querySelectorAll('input[name="answer"]');
+  btn.addEventListener("click", () => {
+    let selectedAnswer;
+    console.log("button has been clicked");
+    for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        console.log("button has been checked");
+        selectedAnswer = radioButton.value;
+        console.log(selectedAnswer);
+        scoring(selectedAnswer);
+        break;
+      }
+    }
+    funTest();
+    // output.innerText = selectedAnswer;
+    //   ? "You selected ${selectedAnswer}"
+    //   : "You haven't selected an answer";
+  });
+}
+// fxn to display submission value
+// function displaySelection() {
+//   var selection = document
+//     .querySelector('input[name="answer"]:checked')
+//     .value();
+//   console.log(selection);
+//   alert("You chose: " + selection);
+// }
 
 // variables for questions and answers
 var question = document.querySelector(".question");
@@ -98,6 +154,14 @@ function questionOne() {
   answerTwo.textContent = questAns[2];
   answerThree.textContent = questAns[3];
   answerFour.textContent = questAns[4];
+  // var selection = document
+  //   .querySelector('input[name="answer"]:checked')
+  //   .value();
+  // console.log(selection);
+  // displaySelection();
+  questionCount++;
+  selection(questionTwo);
+  // questionTwo();
 }
 
 //function to ask q2
@@ -107,6 +171,9 @@ function questionTwo() {
   answerTwo.textContent = questAns[7];
   answerThree.textContent = questAns[8];
   answerFour.textContent = questAns[9];
+  questionCount++;
+  selection(questionThree);
+  // questionThree();
 }
 
 //fxn to ask q3
@@ -116,6 +183,8 @@ function questionThree() {
   answerTwo.textContent = questAns[12];
   answerThree.textContent = questAns[13];
   answerFour.textContent = questAns[14];
+  questionCount++;
+  selection(questionFour);
 }
 
 // fxn to ask q4
@@ -125,6 +194,8 @@ function questionFour() {
   answerTwo.textContent = questAns[17];
   answerThree.textContent = questAns[18];
   answerFour.textContent = questAns[19];
+  questionCount++;
+  selection(questionFive);
 }
 
 //fxn to ask q5
@@ -134,11 +205,13 @@ function questionFive() {
   answerTwo.textContent = questAns[22];
   answerThree.textContent = questAns[23];
   answerFour.textContent = questAns[24];
+  questionCount++;
 }
 
 // function to start quiz
 function startQuiz() {
   questionOne();
+  // questionTwo();
 }
 
 console.log(answers[2]);
